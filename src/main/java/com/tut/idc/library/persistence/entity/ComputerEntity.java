@@ -21,6 +21,6 @@ public class ComputerEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     private ComputerLabEntity computerLab;
     private String computerName;
-    @Enumerated(EnumType.STRING)
-    private ComputerStatus status;
+    private String brandName;
+    private String serialNumber;
 }

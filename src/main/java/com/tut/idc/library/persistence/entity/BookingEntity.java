@@ -1,6 +1,8 @@
 package com.tut.idc.library.persistence.entity;
 
+import com.tut.idc.library.model.enums.BookingStatus;
 import com.tut.idc.library.model.enums.ComputerStatus;
+import com.tut.idc.library.model.enums.ContactPreference;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,11 +21,15 @@ public class BookingEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @ManyToOne(cascade = CascadeType.ALL)
-    private ComputerEntity computer;
     private String IDNumber;
     private String accessToken;
+    private LocalDateTime dateTime;
     @Enumerated(EnumType.STRING)
-    private ComputerStatus status;
-    private LocalDateTime dateAndTime;
+    private ContactPreference contactPreference;
+    @Enumerated(EnumType.STRING)
+    private BookingStatus status;
+    @ManyToOne()
+    private ComputerEntity computer;
+    @ManyToOne()
+    private ComputerLabEntity computerLab;
 }

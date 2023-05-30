@@ -23,7 +23,9 @@ public class ComputerLabEntity {
     private String closingTime;
     @Enumerated(EnumType.STRING)
     private ComputerLabStatus status;
-
     @OneToMany(mappedBy = "id")
     private List<ComputerEntity> computers;
+    @OneToMany(mappedBy = "id")
+    private List<BookingEntity> bookings;
+
 }

@@ -1,6 +1,7 @@
 package com.tut.idc.library.service;
 
 import com.tut.idc.library.util.PrimaryContactUtil;
+import com.tut.idc.library.web.exception.TokenException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -13,6 +14,10 @@ public class SMSAgent extends TokenAgent{
     @Override
     public void sendToken(PrimaryContactUtil primaryContact){
         String messageToSend = primaryContact.getSubject() + " " + primaryContact.getMessageContent();
-        tokenService.sendSMS(primaryContact.getContactValue(), messageToSend);
+        try {
+            tokenService.sendSMS(primaryContact.getContactValue(), messageToSend);
+        } catch (Exception | Error ex){
+            throw new TokenException("Failed to send token.", ex);
+        }
     }
 }

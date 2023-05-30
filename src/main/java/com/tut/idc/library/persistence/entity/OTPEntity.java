@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "one_time_pin")
@@ -22,4 +23,5 @@ public class OTPEntity {
     private String oneTimePin;
     @Enumerated(EnumType.STRING)
     private OTPStatus status;
+    private LocalDate expiryDate;
 }

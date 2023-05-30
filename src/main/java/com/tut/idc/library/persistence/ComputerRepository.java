@@ -12,4 +12,5 @@ import java.util.List;
 public interface ComputerRepository extends CrudRepository<ComputerEntity, Long> {
     List<ComputerEntity> findByComputerLabId(Long computerLabId);
     ComputerEntity findByComputerName(String computerName);
+    ComputerEntity findBySerialNumber(String serialNumber);
 }

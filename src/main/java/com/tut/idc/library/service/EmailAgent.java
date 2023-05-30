@@ -1,11 +1,11 @@
 package com.tut.idc.library.service;
 
+import com.tut.idc.library.web.exception.TokenException;
 import com.tut.idc.library.util.PrimaryContactUtil;
 import lombok.AllArgsConstructor;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
 
 @Component
 @AllArgsConstructor
@@ -17,6 +17,10 @@ public class EmailAgent extends TokenAgent {
         mailMessage.setTo(primaryContact.getContactValue());
         mailMessage.setSubject(primaryContact.getSubject());
         mailMessage.setText(primaryContact.getMessageContent());
-        tokenService.sendEmail(mailMessage);
+        try {
+            tokenService.sendEmail(mailMessage);
+        } catch (Exception | Error ex){
+            throw new TokenException("Failed to send token.");
+        }
     }
 }

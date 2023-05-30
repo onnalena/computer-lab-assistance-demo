@@ -1,6 +1,7 @@
 package com.tut.idc.library.persistence.entity;
 
 import com.tut.idc.library.model.enums.UserStatus;
+import com.tut.idc.library.model.enums.UserType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -24,6 +25,8 @@ public class UserEntity {
     private String firstname;
     private String lastname;
     private String password;
+    @Enumerated(EnumType.STRING)
+    private UserType userType;
     @Enumerated(EnumType.STRING)
     private UserStatus status;
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)

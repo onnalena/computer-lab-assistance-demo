@@ -1,7 +1,9 @@
 package com.tut.idc.library.util;
 
+import com.tut.idc.library.model.UserContactDTO;
 import com.tut.idc.library.model.enums.ContactPreference;
 import com.tut.idc.library.model.enums.UserContactOption;
+import com.tut.idc.library.persistence.UserContactRepository;
 import com.tut.idc.library.persistence.entity.UserContactEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -27,5 +29,4 @@ public class PrimaryContactUtil {
                 .filter(x -> x.getStatus().equals(UserContactOption.PRIMARY)).findFirst();
         return new PrimaryContactUtil(optionalPrimaryContact.get().getContactPreference(), optionalPrimaryContact.get().getContact());
     }
-
 }
