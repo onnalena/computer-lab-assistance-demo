@@ -18,8 +18,8 @@ import javax.annotation.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-05-30T07:27:18+0200",
-    comments = "version: 1.5.3.Final, compiler: javac, environment: Java 17.0.4.1 (Amazon.com Inc.)"
+    date = "2023-05-31T19:13:17+0200",
+    comments = "version: 1.5.3.Final, compiler: javac, environment: Java 1.8.0_321 (Oracle Corporation)"
 )
 public class ComputerLabMapperImpl implements ComputerLabMapper {
 

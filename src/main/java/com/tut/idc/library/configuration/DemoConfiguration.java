@@ -126,7 +126,7 @@ public class DemoConfiguration {
                     .contactPreference(ContactPreference.EMAIL)
                     .computer(computerRepository.findBySerialNumber("S4MX1"))
                     .computerLab(computerLabRepository.findByComputerLabName("Lab-1"))
-                    .dateTime(LocalDateTime.parse("2023-05-30T09:00"))
+                    .dateTime(LocalDateTime.parse("2023-05-31T10:00"))
                     .accessToken("87011")
                     .build();
             BookingEntity booking1 = BookingEntity.builder()
@@ -135,7 +135,7 @@ public class DemoConfiguration {
                     .contactPreference(ContactPreference.EMAIL)
                     .computer(computerRepository.findBySerialNumber("S4MX1"))
                     .computerLab(computerLabRepository.findByComputerLabName("Lab-1"))
-                    .dateTime(LocalDateTime.parse("2023-05-30T12:00"))
+                    .dateTime(LocalDateTime.parse("2023-05-31T12:00"))
                     .accessToken("87011")
                     .build();
             bookingRepository.save(booking);
